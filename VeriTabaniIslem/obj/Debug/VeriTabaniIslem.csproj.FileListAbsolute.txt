@@ -4,3 +4,9 @@ C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\obj\Debug\VeriT
 C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.dll
 C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.pdb
 C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.csproj.AssemblyReference.cache
+C:\Users\rampa\OneDrive\Belgeler\GitHub\EntityModel\VeriTabaniIslem\bin\Debug\VeriTabaniIslem.dll
+C:\Users\rampa\OneDrive\Belgeler\GitHub\EntityModel\VeriTabaniIslem\bin\Debug\VeriTabaniIslem.pdb
+C:\Users\rampa\OneDrive\Belgeler\GitHub\EntityModel\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.csproj.AssemblyReference.cache
+C:\Users\rampa\OneDrive\Belgeler\GitHub\EntityModel\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.csproj.CoreCompileInputs.cache
+C:\Users\rampa\OneDrive\Belgeler\GitHub\EntityModel\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.dll
+C:\Users\rampa\OneDrive\Belgeler\GitHub\EntityModel\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.pdb

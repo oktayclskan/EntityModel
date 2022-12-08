@@ -14,7 +14,7 @@ namespace VeriTabaniIslem
 
         public DataModel()
         {
-            con = new SqlConnection(ConnectionStrings.ConStr);
+            con = new SqlConnection(ConnectionStrings.MConstr);
             cmd = con.CreateCommand();
         }
 
@@ -115,6 +115,32 @@ namespace VeriTabaniIslem
                     suspansiyonlar.Add(s);
                 }
                 return suspansiyonlar;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Renkler> RenkListele()
+        {
+            List<Renkler> renkler = new List<Renkler>();
+            try
+            {
+                cmd.CommandText = "SELECT ID,Renk FROM Renkler";
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Renkler r = new Renkler();
+                    r.ID = reader.GetInt32(0);
+                    r.Renk = reader.GetString(1);
+                    renkler.Add(r);
+                }
+                return renkler;
             }
             catch
             {

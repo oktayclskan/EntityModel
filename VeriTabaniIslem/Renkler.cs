@@ -8,6 +8,7 @@ namespace VeriTabaniIslem
 {
     public class Renkler
     {
+        public int ID { get; set; }
         public string Renk { get; set; }
     }
 }
