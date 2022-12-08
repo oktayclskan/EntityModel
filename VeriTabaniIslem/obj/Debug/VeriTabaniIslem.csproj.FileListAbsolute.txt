@@ -1,0 +1,6 @@
+C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\bin\Debug\VeriTabaniIslem.dll
+C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\bin\Debug\VeriTabaniIslem.pdb
+C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.csproj.CoreCompileInputs.cache
+C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.dll
+C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.pdb
+C:\Users\Samsung\source\repos\EntityModelOrnekV2\VeriTabaniIslem\obj\Debug\VeriTabaniIslem.csproj.AssemblyReference.cache
