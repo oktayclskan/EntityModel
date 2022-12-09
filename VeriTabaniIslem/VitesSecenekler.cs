@@ -8,6 +8,7 @@ namespace VeriTabaniIslem
 {
     public class VitesSecenekler
     {
-        public int Vites { get; set; }
+        public int Id { get; set; }
+        public string Vites { get; set; }
     }
 }

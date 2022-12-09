@@ -151,7 +151,91 @@ namespace VeriTabaniIslem
                 con.Close();
             }
         }
+        public List<GovdeTurleri> GovdeTurListele()
+        {
+            List<GovdeTurleri> govdeturleri = new List<GovdeTurleri>();
+            try
+            {
+                cmd.CommandText = "SELECT ID,Govde_Tur FROM GovdeTur";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    GovdeTurleri g = new GovdeTurleri();
+                    g.ID = reader.GetInt32(0);
+                    g.Govdetur = reader.GetString(1);
+                    govdeturleri.Add(g);
+                }
+                return govdeturleri;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<VitesSecenekler> VitesSecenekListele()
+        {
+            List<VitesSecenekler> vitesSecenekler = new List<VitesSecenekler>();
+            try
+            {
+                cmd.CommandText = "SELECT ID, Vites FROM VitesSecenekler";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    VitesSecenekler vs = new VitesSecenekler();
+                    vs.Id = reader.GetInt32(0);
+                    vs.Vites = reader.GetString(1);
+                    vitesSecenekler.Add(vs);
 
+                }
+                return vitesSecenekler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool UpdateEt(Bisikletler u)
+        {
+            try
+            {
+
+                cmd.CommandText = "UPDATE Bisikletler (Marka,Model,Agırlık,Kategori_ID,Suspansiyon_ID,Renk_ID,Vites_ID,Govde_ID,Fiyat)VALUES (@marka,@model,@agırlık,@kategoriID,@suspansiyonID,@renkID,@vitesID,@govdeID,@fiyat)";
+                cmd.Parameters.AddWithValue("@marka", u.Marka);
+                cmd.Parameters.AddWithValue("@model", u.Model);
+                cmd.Parameters.AddWithValue("@agırlık", u.Agırlık);
+                cmd.Parameters.AddWithValue("@kategoriID", u.KategoriID);
+                cmd.Parameters.AddWithValue("@suspansiyonID", u.SuspansiyonID);
+                cmd.Parameters.AddWithValue("@renkID", u.RenkID);
+                cmd.Parameters.AddWithValue("@vitesID", u.VitesID);
+                cmd.Parameters.AddWithValue("@govdeID", u.GovdeID);
+                cmd.Parameters.AddWithValue("@fiyat", u.Fiyat);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+            
+        }
     }
 }
 

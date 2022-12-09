@@ -8,6 +8,7 @@ namespace VeriTabaniIslem
 {
     public class GovdeTurleri
     {
+        public int ID { get; set; }
         public string Govdetur { get; set; }
     }
 }
