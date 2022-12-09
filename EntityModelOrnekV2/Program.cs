@@ -12,7 +12,7 @@ namespace EntityModelOrnekV2
     {
         static void Main(string[] args)
         {
-            
+
             DataModel dm = new DataModel();
             Bisikletler b = new Bisikletler();
 
@@ -35,7 +35,7 @@ namespace EntityModelOrnekV2
 
 
             #endregion
-            #region Konsoldan alınan veri ile bisiklet ekle
+            //#region Konsoldan alınan veri ile bisiklet ekle
             //Console.WriteLine("");
             //Console.WriteLine("                                             ***      OKİ BİSİKLET      ***");
             //Console.WriteLine("");
@@ -49,7 +49,7 @@ namespace EntityModelOrnekV2
             //b.Model = model;
 
             //Console.WriteLine("Bisikletin Ağırlığını Belirtiniz");
-            //int agırlık = Convert.ToInt32(Console.ReadLine());
+            //string agırlık = Console.ReadLine();
             //b.Agırlık = agırlık;
 
 
@@ -108,11 +108,34 @@ namespace EntityModelOrnekV2
             //}
 
 
-            #endregion
+            //#endregion
             #region Veri Güncelle
 
-           
-           
+            List<Bisikletler> bisikletler = dm.BisikletListele();
+            foreach (Bisikletler item in bisikletler)
+            {
+                Console.WriteLine($"{item.ID}) {item.Marka} {item.Model} {item.Agirlik} {item.KategoriID} {item.SuspansiyonID} {item.RenkID} {item.VitesID} {item.GovdeID} {item.Fiyat}");
+            }
+
+            //Bisikletler u = new Bisikletler();
+            //Console.WriteLine("Güncellemek istediğiniz ID yazınz");
+            //u.ID = Convert.ToInt32(Console.ReadLine());
+
+            ////Liste getir üste
+            //Console.WriteLine("Güncellemek istediğiniz Markayı Yazınız");
+            //u.Marka = Console.ReadLine();
+
+            //if (dm.MarkaUpdateEt(u))
+            //{
+            //    Console.WriteLine("başarılı");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Başarısız");
+            //}
+
+
+
             #endregion
         }
     }

@@ -8,9 +8,10 @@ namespace VeriTabaniIslem
 {
     public class Bisikletler
     {
+        public int ID { get; set; }
         public string Marka { get; set; }
         public string Model { get; set; }
-        public int Agırlık { get; set; }
+        public string Agirlik { get; set; }
         public int KategoriID { get; set; }
         public int SuspansiyonID { get; set; }
         public int RenkID { get; set; }

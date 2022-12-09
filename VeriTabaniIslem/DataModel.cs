@@ -47,7 +47,7 @@ namespace VeriTabaniIslem
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@marka",b.Marka);
                 cmd.Parameters.AddWithValue("@model", b.Model);
-                cmd.Parameters.AddWithValue("@agırlık", b.Agırlık);
+                cmd.Parameters.AddWithValue("@agırlık", b.Agirlik);
                 cmd.Parameters.AddWithValue("@kategoriID", b.KategoriID);
                 cmd.Parameters.AddWithValue("@suspansiyonID", b.SuspansiyonID);
                 cmd.Parameters.AddWithValue("@renkID", b.RenkID);
@@ -67,7 +67,41 @@ namespace VeriTabaniIslem
                 con.Close();
             }
         }
-
+        public List<Bisikletler> BisikletListele()
+        {
+            List<Bisikletler> bisikletler = new List<Bisikletler>();
+            try
+            {
+                cmd.CommandText = "SELECT ID,Marka,Model,Agirlik,Kategori_ID,Suspansiyon_ID,Renk_ID,Vites_ID,Govde_ID,Fiyat FROM Bisikletler";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Bisikletler bsklt = new Bisikletler();
+                    bsklt.ID = reader.GetInt32(0);
+                    bsklt.Marka = reader.GetString(1);
+                    bsklt.Model = reader.GetString(2);
+                    bsklt.Agirlik = reader.GetString(3);
+                    bsklt.KategoriID = reader.GetInt32(4);
+                    bsklt.SuspansiyonID = reader.GetInt32(5);
+                    bsklt.RenkID = reader.GetInt32(6);
+                    bsklt.VitesID = reader.GetInt32(7);
+                    bsklt.GovdeID = reader.GetInt32(8);
+                    bsklt.Fiyat = reader.GetDecimal(9);
+                    bisikletler.Add(bsklt);
+                }
+                return bisikletler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         public List<Kategoriler> KategoriListele()
         {
             List<Kategoriler> kategoriler = new List<Kategoriler>();
@@ -207,21 +241,15 @@ namespace VeriTabaniIslem
             }
         }
 
-        public bool UpdateEt(Bisikletler u)
+        public bool MarkaUpdateEt(Bisikletler u)
         {
             try
             {
 
-                cmd.CommandText = "UPDATE Bisikletler (Marka,Model,Agırlık,Kategori_ID,Suspansiyon_ID,Renk_ID,Vites_ID,Govde_ID,Fiyat)VALUES (@marka,@model,@agırlık,@kategoriID,@suspansiyonID,@renkID,@vitesID,@govdeID,@fiyat)";
+                cmd.CommandText = "UPDATE Bisikletler SET Marka = @marka where ID =@id";
+                cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@marka", u.Marka);
-                cmd.Parameters.AddWithValue("@model", u.Model);
-                cmd.Parameters.AddWithValue("@agırlık", u.Agırlık);
-                cmd.Parameters.AddWithValue("@kategoriID", u.KategoriID);
-                cmd.Parameters.AddWithValue("@suspansiyonID", u.SuspansiyonID);
-                cmd.Parameters.AddWithValue("@renkID", u.RenkID);
-                cmd.Parameters.AddWithValue("@vitesID", u.VitesID);
-                cmd.Parameters.AddWithValue("@govdeID", u.GovdeID);
-                cmd.Parameters.AddWithValue("@fiyat", u.Fiyat);
+                cmd.Parameters.AddWithValue("@id", u.ID);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
