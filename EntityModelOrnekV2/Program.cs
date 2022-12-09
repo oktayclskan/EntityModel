@@ -35,86 +35,90 @@ namespace EntityModelOrnekV2
 
 
             #endregion
-            //#region Konsoldan alınan veri ile bisiklet ekle
-            //Console.WriteLine("");
-            //Console.WriteLine("                                             ***      OKİ BİSİKLET      ***");
-            //Console.WriteLine("");
-            //Console.WriteLine("Eklemek İstediğiniz Markayı Yazınız");
-            //string marka = Console.ReadLine();
+            #region Konsoldan alınan veri ile bisiklet ekle
+            Console.WriteLine("");
+            Console.WriteLine("                                             ***      OKİ BİSİKLET      ***");
+            Console.WriteLine("");
+            Console.WriteLine("Eklemek İstediğiniz Markayı Yazınız");
+            string marka = Console.ReadLine();
 
-            //b.Marka = marka;
+            b.Marka = marka;
 
-            //Console.WriteLine("Eklemek İstediğiniz Markanın Modelini Yazınız");
-            //string model = Console.ReadLine();
-            //b.Model = model;
+            Console.WriteLine("Eklemek İstediğiniz Markanın Modelini Yazınız");
+            string model = Console.ReadLine();
+            b.Model = model;
 
-            //Console.WriteLine("Bisikletin Ağırlığını Belirtiniz");
-            //string agırlık = Console.ReadLine();
-            //b.Agırlık = agırlık;
-
-
-            //List<Kategoriler> kategoriler = dm.KategoriListele();
-            //foreach (Kategoriler item in kategoriler)
-            //{
-            //    Console.WriteLine(item.ID + ".) " + item.KategoriTur);
-            //}
-            //Console.WriteLine("Kategori ID'sini Yazınız");
-            //int KategoriId = Convert.ToInt32(Console.ReadLine());
-            //b.KategoriID = KategoriId;
-
-            //List<Suspansiyonlar> suspansiyonlar = dm.SuspansiyonListele();
-            //foreach (Suspansiyonlar item in suspansiyonlar)
-            //{
-            //    Console.WriteLine($"{item.ID}.){item.Marka} {item.Model} Fiyat = {item.Fiyat}");
-            //}
-            //Console.WriteLine("Suspansiyon ID'sini Yazınız");
-            //int suspansiyonID = Convert.ToInt32(Console.ReadLine());
-            //b.SuspansiyonID = suspansiyonID;
-
-            //List<Renkler> renkler = dm.RenkListele();
-            //foreach (Renkler item in renkler)
-            //{
-            //    Console.WriteLine($"{item.ID}.) {item.Renk}");
-            //}
-            //Console.WriteLine("Renk Id Belirtiniz");
-            //int renkID = Convert.ToInt32(Console.ReadLine());
-            //b.RenkID = renkID;
-
-            //List<GovdeTurleri> govdeturleri = dm.GovdeTurListele();
-            //foreach (GovdeTurleri item in govdeturleri)
-            //{
-            //    Console.WriteLine($"{item.ID}.)  {item.Govdetur}");
-            //}
-            //Console.WriteLine("Lütfen Gövde Türünün ID'sini Belirtiniz");
-            //int govdeTur = Convert.ToInt32(Console.ReadLine());
-            //b.GovdeID = govdeTur;
-
-            //List<VitesSecenekler> vitessecenek = dm.VitesSecenekListele();
-            //foreach (VitesSecenekler item in vitessecenek)
-            //{
-            //    Console.WriteLine($"{item.Id}.) {item.Vites}");
-            //}
-            //Console.WriteLine("Lütfen Vites Id'sini Belirtiniz");
-            //int vitesıd = Convert.ToInt32(Console.ReadLine());
-            //b.VitesID = vitesıd;
-
-            //if (dm.BisikletEkle(b))
-            //{
-            //    Console.WriteLine("Bisikletiniz Eklenmiştir");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Bisiklet Eklene İşleminde Hata Oluştu");
-            //}
+            Console.WriteLine("Bisikletin Ağırlığını Belirtiniz");
+            string agırlık = Console.ReadLine();
+            b.Agirlik = agırlık;
 
 
-            //#endregion
+            List<Kategoriler> kategoriler = dm.KategoriListele();
+            foreach (Kategoriler item in kategoriler)
+            {
+                Console.WriteLine(item.ID + ".) " + item.KategoriTur);
+            }
+            Console.WriteLine("Kategori ID'sini Yazınız");
+            int KategoriId = Convert.ToInt32(Console.ReadLine());
+            b.KategoriID = KategoriId;
+
+            List<Suspansiyonlar> suspansiyonlar = dm.SuspansiyonListele();
+            foreach (Suspansiyonlar item in suspansiyonlar)
+            {
+                Console.WriteLine($"{item.ID}.){item.Marka} {item.Model} Fiyat = {item.Fiyat}");
+            }
+            Console.WriteLine("Suspansiyon ID'sini Yazınız");
+            int suspansiyonID = Convert.ToInt32(Console.ReadLine());
+            b.SuspansiyonID = suspansiyonID;
+
+            List<Renkler> renkler = dm.RenkListele();
+            foreach (Renkler item in renkler)
+            {
+                Console.WriteLine($"{item.ID}.) {item.Renk}");
+            }
+            Console.WriteLine("Renk Id Belirtiniz");
+            int renkID = Convert.ToInt32(Console.ReadLine());
+            b.RenkID = renkID;
+
+            List<GovdeTurleri> govdeturleri = dm.GovdeTurListele();
+            foreach (GovdeTurleri item in govdeturleri)
+            {
+                Console.WriteLine($"{item.ID}.)  {item.Govdetur}");
+            }
+            Console.WriteLine("Lütfen Gövde Türünün ID'sini Belirtiniz");
+            int govdeTur = Convert.ToInt32(Console.ReadLine());
+            b.GovdeID = govdeTur;
+
+            List<VitesSecenekler> vitessecenek = dm.VitesSecenekListele();
+            foreach (VitesSecenekler item in vitessecenek)
+            {
+                Console.WriteLine($"{item.Id}.) {item.Vites}");
+            }
+            Console.WriteLine("Lütfen Vites Id'sini Belirtiniz");
+            int vitesıd = Convert.ToInt32(Console.ReadLine());
+            b.VitesID = vitesıd;
+
+            Console.WriteLine("Bisikletin Fiyatını Belirtiniz");
+            decimal fiyat = Convert.ToDecimal(Console.ReadLine());
+            b.Fiyat = fiyat;
+
+            if (dm.BisikletEkle(b))
+            {
+                Console.WriteLine("Bisikletiniz Eklenmiştir");
+            }
+            else
+            {
+                Console.WriteLine("Bisiklet Eklene İşleminde Hata Oluştu");
+            }
+
+
+            #endregion
             #region Veri Güncelle
 
             List<Bisikletler> bisikletler = dm.BisikletListele();
             foreach (Bisikletler item in bisikletler)
             {
-                Console.WriteLine($"{item.ID}) {item.Marka} {item.Model} {item.Agirlik} {item.KategoriID} {item.SuspansiyonID} {item.RenkID} {item.VitesID} {item.GovdeID} {item.Fiyat}");
+                Console.WriteLine($"{item.ID}.) {item.Marka} {item.Model} {item.Agirlik} {item.KategoriID} {item.SuspansiyonID} {item.RenkID} {item.VitesID} {item.GovdeID} {item.Fiyat}");
             }
 
             //Bisikletler u = new Bisikletler();

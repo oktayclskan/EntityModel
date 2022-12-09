@@ -43,7 +43,7 @@ namespace VeriTabaniIslem
         {
             try
             {
-                cmd.CommandText = "INSERT INTO Bisikletler(Marka,Model,Agırlık,Kategori_ID,Suspansiyon_ID,Renk_ID,Vites_ID,Govde_ID,Fiyat)VALUES (@marka,@model,@agırlık,@kategoriID,@suspansiyonID,@renkID,@vitesID,@govdeID,@fiyat)";
+                cmd.CommandText = "INSERT INTO Bisikletler(Marka,Model,Agirlik,Kategori_ID,Suspansiyon_ID,Renk_ID,Vites_ID,Govde_ID,Fiyat)VALUES (@marka,@model,@agırlık,@kategoriID,@suspansiyonID,@renkID,@vitesID,@govdeID,@fiyat)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@marka",b.Marka);
                 cmd.Parameters.AddWithValue("@model", b.Model);
@@ -76,6 +76,7 @@ namespace VeriTabaniIslem
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
+                Console.WriteLine("ID       MARKA           MODEL           AĞIRLIK         KATEGORİ ID         SÜSPANSİYON ID      RENK ID     VİTES ID         GOVDE       FİYAT");
                 while (reader.Read())
                 {
                     Bisikletler bsklt = new Bisikletler();
