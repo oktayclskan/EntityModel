@@ -265,6 +265,70 @@ namespace VeriTabaniIslem
             }
             
         }
+        public bool ModelUpdateET(Bisikletler u)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Bisikletler Set Model = @model where ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@model", u.Model);
+                cmd.Parameters.AddWithValue("@id", u.ID);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+            
+        }
+        public bool AgırlıkUpdateEt(Bisikletler u)
+        {
+            try
+            {
+                cmd.CommandText = "Update Bisikletler SET Agirlik =@agirlik WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@agirlik",u.Agirlik);
+                cmd.Parameters.AddWithValue("@id", u.ID);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public bool KategoriUpdateEt(Bisikletler u)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Bisikletler SET Kategori_ID =@kategoriId WHERE ID =@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@kategoriId", u.KategoriID);
+                cmd.Parameters.AddWithValue("@id", u.ID);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
 
